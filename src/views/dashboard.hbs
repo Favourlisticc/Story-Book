@@ -1,0 +1,40 @@
+<div class="container">
+<h6>Successfully logged in</h6>
+<h1>Welcome {{name}}</h1>
+
+<h3>List of StoryBooks</h3>
+
+{{#if storybook}}
+   <table class="striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Status</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        {{#each storybook}}
+        <tr>
+            <td> <a href="/stories/{{_id}}">{{title}}</a> </td>
+            <td> {{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}  </td>
+            <td> <span class="dash-status">{{status}}</span>  </td>
+            <td class="btn-float">
+                <a href="/stories/edit/{{_id}}" class="btn btn-right"><i class="fas fa-edit fa-small"></i></a>
+                 
+                 <form action="stories/{{_id}}" method="POST" id="delete-form">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="btn red">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                 </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+   </table>
+  {{else}}
+       <p>You have not created any stories</p>
+  {{/if}}
+  </div>

@@ -1,0 +1,21 @@
+p{
+    margin: 10px o  !important;
+}
+
+.login-container{
+    width: 400px;
+    margin-top: 50;
+    text-align: center;
+}
+.width-navbar{
+    width: 1000;
+}
+.fa-small{
+    font-size: 16px !important;
+}
+.btn-float{
+    display:flex;
+}
+.btn-right{
+    margin-right: 10px;
+}
