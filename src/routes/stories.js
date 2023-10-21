@@ -75,7 +75,7 @@ router.put('/:id', ensureUnauthUser,  async(req, res) =>{
     try{
         let story = await StorySchema.findById(req.params.id)
         .lean()
-     
+
         if(!story){
          return res.render('erros/404')
         }

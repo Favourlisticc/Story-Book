@@ -64,7 +64,7 @@ app.use(sessionstorybooks({
     resave: false,
     saveUninitialized: false,
     store : mongoStore.create({
-        mongoUrl: 'Your MongoDB secrey Key'
+        mongoUrl: "mongodb+srv://favoursunday600:Favoursu@cluster0.ovy8rh1.mongodb.net/test"
 
       })
 }))
@@ -88,6 +88,6 @@ app.use('/auth', require('./routes/auth'))
 app.use('/stories', require('./routes/stories'))
 
 //PORT
-const PORT = 5000;
+const PORT = 7000;
 
 app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} model on ${PORT}`))
