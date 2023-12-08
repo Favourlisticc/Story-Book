@@ -11,15 +11,20 @@ passport.serializeUser((user, done) => {
     passport.deserializeUser( async(id, done) => {
      console.log("Deserializing")
      console.log(id)
-     UserSchema.findById(id, (err, user) => done(err, user))
+     try {
+        const user = await UserSchema.findById(id);
+        done(null, user);
+      } catch (err) {
+        done(err);
+      }
 
     })
 
 module.exports = function(passport){
     passport.use(new GoogleStrategy({
-        clientID: '479187050423-07684o96pveqb67ig05ilr489pvibavj.apps.googleusercontent.com',
-        clientSecret: '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',
-        callbackURL: "http://localhost:5000/auth/google/callback"
+        clientID: '707951848450-1e46thcck3v1m25a84oapuhh7776hb74.apps.googleusercontent.com',
+        clientSecret: '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',
+        callbackURL: "http://localhost:7000/auth/google/callback"
       },
       async(accessToken, refreshToken, profile, done) => {
         console.log(profile)

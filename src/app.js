@@ -64,7 +64,7 @@ app.use(sessionstorybooks({
     resave: false,
     saveUninitialized: false,
     store : mongoStore.create({
-        mongoUrl: "mongodb+srv://favoursunday600:Favoursu@cluster0.ovy8rh1.mongodb.net/test"
+        mongoUrl: "mongodb+srv://favoursunday:favoursu55@cluster0.6es08zq.mongodb.net/storybook"
 
       })
 }))
